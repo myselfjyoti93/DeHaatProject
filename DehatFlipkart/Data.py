@@ -33,6 +33,15 @@ class ProductList:
         for row in lines:
             if row[0] == name:
                 product = [row[0], row[1], row[2], row[3], row[4], row[5]]
+        return product
+
+    def get_all_products(self):
+        product = []
+        r = csv.reader(open('products.csv'))  # Here your csv file
+        lines = list(r)
+        for row in lines:
+            product.append(row)
+        return product
 
 
 
